@@ -1,0 +1,142 @@
+:root{
+    --background: #2c2c2c;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--background);
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin: 0;
+}
+.perfil-wrapper{
+    width: 350px;
+    height: 450px;
+    position: relative;
+}
+.perfil{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 450px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .6);
+    cursor: pointer;
+    transition: .5s;
+}
+.perfil .perfil-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: var(--background);
+    transition: .5s;
+}
+.perfil-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.perfil:hover .perfil-img{
+    transform: translateY(-104px);
+    transition: all .9s;
+}
+.perfil-bio{
+    font-size: 10px;
+    opacity: 0.9;
+}
+.perfil:hover .perfil-bio{
+    font-size: 10px;
+    opacity: 0.9;
+}
+.perfil-bio p{
+    padding: 2px;
+    font-weight: bolder;
+}
+.social-icons{
+    position: absolute;
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+    bottom: 164px;
+    border-radius: 25px;
+}
+.social-icons li{
+    list-style: none
+}
+.social-icons li a{
+    position: relative;
+    display: block;
+    display: grid;
+    align-items: center;
+    background: #ffffff;
+    font-size: 23px;
+    font-weight: bolder;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #cdcdcd;
+    border-radius: 8px;
+    transition: .2s;
+    transform: translateY(32px);
+    opacity: 0;
+}
+.social-icons li a:hover{
+    color: var(--background);
+    transition: .2s;
+}
+.social-icons li a svg{
+    color: var(--background);
+    transition: .2s;
+}
+.social-icons li a:hover svg{
+    color: #ffffff;
+    transition: 0.8s;
+    transform: rotateY(360deg);
+}
+.perfil:hover .social-icons li a{
+    opacity: 1;
+}
+.perfil:hover li:nth-child(1) a{
+    transition-delay: 0.1s;
+}
+.perfil:hover li:nth-child(2) a{
+    transition-delay: 0.2s;
+}
+.perfil-nome{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 106px;
+    padding: 12px 14px;
+    z-index: 1;
+    color: #333333;
+    background: #ffffff;
+    text-align: left;
+}
+.perfil:hover .perfil-nome{
+    background: #ffffff;
+}
+.perfil-nome h1{
+    font-size: 20px;
+}
